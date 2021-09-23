@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import Profile from './profile/Profile';
+import myImage from './photo.jpg';
+
 import './App.css';
 
 function App() {
+  const commonProps= [{id:'1',
+  FullName:'Sofien',
+   Bio:'https://www.linkedin.com/in/sofien-yahyaoui-9b69a961/', 
+   Profession:'Geologist'}];
+   
+const handleName=(event)=>{
+          event.preventDefault()
+ 
+          alert('Sofien YAHYAOUI')
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <Profile data={commonProps} handle={handleName} > 
+      
+      <img src={myImage} alt="pic"/> 
+
+      </Profile>
   );
 }
 
